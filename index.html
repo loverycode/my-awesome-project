@@ -1,46 +1,81 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>lovary design</title>
-<meta name="description" content="Разработка фирменного стиля, полиграфии, айдентики">
-<link rel="icon" href="assets/favicon.ico" type="image/x-icon">
-</head>
-<body>
-<header>
-<a href="/">Lovary design</a>
-<nav>
-<ul>
-<li><a href="index.html">Главная</a></li>
-<li><a href="about.html">О нас</a></li>
-<li><a href="contacts.html">Контакты</a></li>
-</ul>
-</nav>
-</header>
-<main>
-<h1>Рады приветствовать вас на нашем сайте!</h1>
-<section id="services">
-<h2>Услуги</h2>
-<p>Создание дизайна для визиток, плакатов, баннеров, упаковки</p>
-<p>разработка key visual, айдентики и промо сайтов</p>
-<a href="contacts.html">Связаться с нами</a>
-</section>
-<section id="portfolio">
-<h2>Портфолио</h2>
-<p>Примеры работ</p>
-</section>
-<section id="contacts">
-<h2>Контакты</h2>
-<p>@zarii_naa</p>
-<a href="contacts.html">Подробнее</a> <!-- Ссылка на отдельную страницу -->
-</section>
-</main>
-<!-- Подвал сайта -->
-<footer>
-<p>&copy;2025 Lovary Design. Все права защищены.</p>
-<p>Телефон: +7(939)700-52-52</p>
-</footer>
-</body>
-</html>
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lovary Design</title>
+    <meta name="description" content="сайт-портфолио графического дизайнера">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./styles.css">
+    <script src="main.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <a href="/">Lovary Design</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="portfolio.html">Портфолио</a></li>
+                <li><a href="contacts.html">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Приятно познакомиться, Арина - Ваш графический дизайнер</h1>
+        <section id="services">
+            <h2>Услуги</h2>
+            <p>Полиграфия, типогрвфика</p>
+            <p>разработка key visual, айдентики и промо сайтов и многов всего</p>
+            <a href="portfolio.html">Портфолио</a>
+        </section>
+        <section id="contacts">
+            <p>Напиши сюда или оформи заказ прямо на сайте</p>
+            <a href="contacts.html">Тык для связи</a> <!-- Ссылка на отдельную страницу -->
+        </section>
+        <!-- Кнопка открытия модалки -->
+        <button id="openDialog" type="button">Заказать дизайн</button>
+        <!-- Модалка с формой -->
+        <dialog id="contactDialog" aria-labelledby="dialogTitle">
+            <h2 id="dialogTitle">1 шаг до работы со мной</h2>
+            <form id="contactForm" method="dialog" novalidate>
+                <label for="name">Имя</label>
+                <input id="name" name="name" type="text" required minlength="2" autocomplete="given-name">
+                <label for="email">E-mail</label>
+                <input id="email" name="email" type="email" required autocomplete="email">
+                <label for="phone">Телефон</label>
+                <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel"
+                    aria-describedby="phoneHelp" placeholder="+7 (___) ___-___-__" required
+                    pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$">
+                <small id="phoneHelp">Формат: +7 (900) 000-00-00</small>
+                <label for="topic">Вид услуги</label>
+                <select id="topic" name="topic" required>
+                    <option value="">Выберите услугу</option>
+                    <option>Полигафия</option>
+                    <option>Типографика</option>
+                    <option>Айдентика</option>
+                    <option>Фирменный стиль</option>
+                    <option>Портрет</option>
+                    <option>Другое</option>
+                </select>
+                <label for="message">Комментарий к заказу</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                <div class="form-actions">
+                    <button type="button" id="closeDialog" tabindex="0">Закрыть</button>
+                    <button type="submit" tabindex="0">Отправить</button>
+                </div>
+            </form>
+        </dialog>
+    </main>
+    <!-- Подвал сайта -->
+    <footer>
+        <a href="">ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ</a>
+        <a href="portfolio.html">Портфолио</a>
+        <a href="contacts.html">Контакты</a>
+        <p>&copy;2025 Lovary Design. Все права защищены.</p>
+        <p>Телефон: +7(939)700-52-52</p>
+    </footer>
+</body>
+
+</html>

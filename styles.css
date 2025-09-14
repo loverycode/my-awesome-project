@@ -1,0 +1,233 @@
+/* БАЗОВЫЕ СТИЛИ ДЛЯ ВСЕХ СТРАНИЦ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #ddd;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+}
+
+nav a:hover {
+    color: #007bff;
+}
+
+h1 {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+footer {
+    margin-top: 3rem;
+    padding: 2rem 0;
+    border-top: 1px solid #ddd;
+    text-align: center;
+}
+
+footer a {
+    margin: 0 1rem;
+    text-decoration: none;
+    color: #007bff;
+}
+
+/* СТИЛИ ДЛЯ ГЛАВНОЙ СТРАНИЦЫ (index.html) */
+#services, #contacts {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border: 1px solid #eee;
+    border-radius: 8px;
+}
+
+#openDialog {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 2rem 0;
+}
+
+#openDialog:hover {
+    background: #0056b3;
+}
+
+/* Стили для модального окна */
+dialog {
+    padding: 2rem;
+    border: none;
+    border-radius: 12px;
+    min-width: 400px;
+}
+
+dialog::backdrop {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+label {
+    font-weight: bold;
+}
+
+input, select, textarea {
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.form-actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    justify-content: flex-end;
+}
+
+.form-actions button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.form-actions button[type="button"] {
+    background: #6c757d;
+    color: white;
+}
+
+.form-actions button[type="submit"] {
+    background: #28a745;
+    color: white;
+}
+
+.form-actions button:hover {
+    opacity: 0.9;
+}
+
+small {
+    color: #666;
+    font-size: 0.8rem;
+}
+
+/* СТИЛИ ДЛЯ СТРАНИЦЫ ПОРТФОЛИО (portfolio.html) */
+main nav[aria-label="Хлебные крошки"] {
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+main nav[aria-label="Хлебные крошки"] a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+main nav[aria-label="Хлебные крошки"] span {
+    color: #666;
+}
+
+/* Стили для секций портфолио */
+.portfolio-section h2 {
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.portfolio-section p {
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    background: #f8f9fa;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.portfolio-section p:hover {
+    background: #e9ecef;
+}
+
+/* СТИЛИ ДЛЯ СТРАНИЦЫ КОНТАКТОВ (contacts.html) */
+.contact-info {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #007bff;
+}
+
+.contact-info h2 {
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.contact-details {
+    margin: 1rem 0;
+}
+
+.contact-details p {
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+}
+
+/* ОБЩИЕ СТИЛИ ДЛЯ ВСЕХ СТРАНИЦ */
+main {
+    min-height: 60vh;
+    padding: 2rem 0;
+}
+
+section {
+    margin: 2rem 0;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    nav ul {
+        gap: 1rem;
+    }
+    
+    body {
+        padding: 10px;
+    }
+}
