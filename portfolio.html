@@ -3,52 +3,87 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Проекты">
-    <link rel="stylesheet" href="/my-awesome-project/styles.css">
-    <script src="/my-awesome-project/main.js" defer></script>
-    <link rel="icon" href="/my-awesome-project/assets/favicon.ico">
-    <title>Портфолио</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lovary Design</title>
+    <meta name="description" content="сайт-портфолио графического дизайнера">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <script src="main.js" defer></script>
 </head>
 
 <body>
-    <header>
-        ] <a href="/">Lovary design</a>
-        <nav>
-            <ul>
-                <li><a href="index.html">Главная</a></li>
-                <li><a href="portfolio.html">Портфолио</a></li>
-                <li><a href="contacts.html">Контакты</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <nav aria-label="Хлебные крошки">
-            <a href="index.html">Главная</a>
-            <span>Портфолио</span>
-        </nav>
-        <h1>А ты точно делаешь красиво?</h1>
-        <section class="portfolio-section">
-            <h2>Смотри</h2>
-            <p>Key Visual</p>
-            <p>Инфографика</p>
-            <p>Айдентика</p>
-            <p>Полиграфия</p>
-            <p>Ретушь</p>
-            <p>Моя вторая личность</p>
-        </section>
-        <section>
-            <h2>Понравилось что-то из этого?</h2>
-            <p>Скорее пиши</p>
-            <a href="contacts.html">Тык для связи</a>
-        </section>
-    </main>
-    <footer>
-        <p>&copy;2025 Lovary Design. Все права защищены.</p>
-        <a href="">ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ</a>
-        <a href="portfolio.html">Портфолио</a>
-        <a href="contacts.html">Контакты</a>
-        <p>Телефон: +7(939)700-52-52</p>
-    </footer>
+    <div class="container">
+
+        <body>
+            <div class="container">
+                <header class="site-header">
+                    <a href="/" class="site-header__brand">Lovary Design</a>
+                    <nav class="site-nav" aria-label="Основная навигация">
+                        <ul class="site-nav__list">
+                            <li class="site-nav__item">
+                                <a href="index.html" class="site-nav__link site-nav__link--active">Главная</a>
+                            </li>
+                            <li class="site-nav__item">
+                                <a href="portfolio.html" class="site-nav__link">Портфолио</a>
+                            </li>
+                            <li class="site-nav__item">
+                                <a href="contacts.html" class="site-nav__link">Контакты</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </header>
+
+                <main>
+                    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+                        <ul class="breadcrumbs__list">
+                            <li><a href="index.html" class="breadcrumbs__link">Главная</a></li>
+                            <li><span class="breadcrumbs__current">Портфолио</span></li>
+                        </ul>
+                    </nav>
+
+                    <h1 class="text-center fade-in">А ты точно делаешь красиво?</h1>
+
+                    <section class="portfolio-section section fade-in">
+                        <h2 class="section__title">Смотри</h2>
+                        <div class="portfolio-item">
+                            <p>Key Visual</p>
+                        </div>
+                        <div class="portfolio-item">
+                            <p>Инфографика</p>
+                        </div>
+                        <div class="portfolio-item">
+                            <p>Айдентика</p>
+                        </div>
+                        <div class="portfolio-item">
+                            <p>Полиграфия</p>
+                        </div>
+                        <div class="portfolio-item">
+                            <p>Ретушь</p>
+                        </div>
+                        <div class="portfolio-item">
+                            <p>Моя вторая личность</p>
+                        </div>
+                    </section>
+
+                    <section class="section fade-in">
+                        <h2 class="section__title">Понравилось что-то из этого?</h2>
+                        <p>Скорее пиши</p>
+                        <a href="contacts.html" class="btn btn--primary">Тык для связи</a>
+                    </section>
+                </main>
+
+                <footer class="site-footer">
+                    <footer class="site-footer">
+                        <a href="#" class="site-footer__link">ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ</a>
+                        <a href="portfolio.html" class="site-footer__link">Портфолио</a>
+                        <a href="contacts.html" class="site-footer__link">Контакты</a>
+                        <p class="site-footer__text">&copy;2025 Lovary Design. Все права защищены.</p>
+                        <p class="site-footer__text">Телефон: +7(939)700-52-52</p>
+                    </footer>
+                </footer>
+            </div>
+        </body>
+    </div>
 </body>
 
 </html>

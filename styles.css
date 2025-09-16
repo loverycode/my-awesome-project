@@ -1,233 +1,450 @@
-/* БАЗОВЫЕ СТИЛИ ДЛЯ ВСЕХ СТРАНИЦ */
+/* ===== CSS ПЕРЕМЕННЫЕ (ДИЗАЙН-ТОКЕНЫ) ===== */
+:root {
+  /* Цветовая палитра */
+  --color-bg: #fff;
+  --color-fg: #0b0b0b;
+  --color-muted: #666;
+  --color-primary: #0a84ff;
+  --color-danger: #b00020;
+  --color-success: #00a896;
+  
+  /* Типографика */
+  --font-body: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-heading: "Georgia", serif;
+  
+  /* Размеры и отступы */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 40px;
+  
+  /* Декоративные элементы */
+  --radius: 12px;
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.08), 0 8px 24px rgba(0, 0, 0, 0.08);
+  --transition: all 0.2s ease-in-out;
+}
+
+/* ===== БАЗОВЫЕ СТИЛИ И RESET ===== */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth; /* Плавная прокрутка к якорям */
+  color-scheme: light; /* Светлая тема по умолчанию */
 }
 
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  padding: var(--space-3);
+  max-width: min(100% - 2 * var(--space-4), 1200px);
+  margin-inline: auto;
 }
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 0;
-    margin-bottom: 2rem;
-    border-bottom: 1px solid #ddd;
+/* Контейнер для центрирования контента */
+.container {
+  width: min(100% - 2 * var(--space-4), 1120px);
+  margin-inline: auto;
 }
 
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
-}
-
-nav a {
-    text-decoration: none;
-    color: #333;
-}
-
-nav a:hover {
-    color: #007bff;
+/* ===== ТИПОГРАФИКА ===== */
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  line-height: 1.2;
+  margin-bottom: var(--space-3);
 }
 
 h1 {
-    margin-bottom: 2rem;
-    text-align: center;
+  font-size: clamp(2rem, 5vw, 3rem);
+  text-align: center;
 }
 
-footer {
-    margin-top: 3rem;
-    padding: 2rem 0;
-    border-top: 1px solid #ddd;
-    text-align: center;
+h2 {
+  font-size: clamp(1.5rem, 4vw, 2rem);
 }
 
-footer a {
-    margin: 0 1rem;
-    text-decoration: none;
-    color: #007bff;
-}
-
-/* СТИЛИ ДЛЯ ГЛАВНОЙ СТРАНИЦЫ (index.html) */
-#services, #contacts {
-    margin-bottom: 2rem;
-    padding: 1rem;
-    border: 1px solid #eee;
-    border-radius: 8px;
-}
-
-#openDialog {
-    background: #007bff;
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    border-radius: 6px;
-    cursor: pointer;
-    margin: 2rem 0;
-}
-
-#openDialog:hover {
-    background: #0056b3;
-}
-
-/* Стили для модального окна */
-dialog {
-    padding: 2rem;
-    border: none;
-    border-radius: 12px;
-    min-width: 400px;
-}
-
-dialog::backdrop {
-    background: rgba(0, 0, 0, 0.5);
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-label {
-    font-weight: bold;
-}
-
-input, select, textarea {
-    padding: 0.75rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 1rem;
-}
-
-.form-actions {
-    display: flex;
-    gap: 0.5rem;
-    margin-top: 1rem;
-    justify-content: flex-end;
-}
-
-.form-actions button {
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.form-actions button[type="button"] {
-    background: #6c757d;
-    color: white;
-}
-
-.form-actions button[type="submit"] {
-    background: #28a745;
-    color: white;
-}
-
-.form-actions button:hover {
-    opacity: 0.9;
-}
-
-small {
-    color: #666;
-    font-size: 0.8rem;
-}
-
-/* СТИЛИ ДЛЯ СТРАНИЦЫ ПОРТФОЛИО (portfolio.html) */
-main nav[aria-label="Хлебные крошки"] {
-    margin-bottom: 1rem;
-    font-size: 0.9rem;
-}
-
-main nav[aria-label="Хлебные крошки"] a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-main nav[aria-label="Хлебные крошки"] span {
-    color: #666;
-}
-
-/* Стили для секций портфолио */
-.portfolio-section h2 {
-    margin-bottom: 1rem;
-    color: #333;
-}
-
-.portfolio-section p {
-    margin: 0.5rem 0;
-    padding: 0.5rem;
-    background: #f8f9fa;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.portfolio-section p:hover {
-    background: #e9ecef;
-}
-
-/* СТИЛИ ДЛЯ СТРАНИЦЫ КОНТАКТОВ (contacts.html) */
-.contact-info {
-    margin: 2rem 0;
-    padding: 1.5rem;
-    background: #f8f9fa;
-    border-radius: 8px;
-    border-left: 4px solid #007bff;
-}
-
-.contact-info h2 {
-    margin-bottom: 1rem;
-    color: #333;
-}
-
-.contact-details {
-    margin: 1rem 0;
-}
-
-.contact-details p {
-    margin: 0.5rem 0;
-    padding: 0.5rem;
-}
-
-/* ОБЩИЕ СТИЛИ ДЛЯ ВСЕХ СТРАНИЦ */
-main {
-    min-height: 60vh;
-    padding: 2rem 0;
-}
-
-section {
-    margin: 2rem 0;
-}
-
+/* ===== ССЫЛКИ И СОСТОЯНИЯ ===== */
 a {
-    color: #007bff;
-    text-decoration: none;
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: var(--transition);
 }
 
 a:hover {
-    text-decoration: underline;
+  color: var(--color-fg);
+  text-decoration: underline;
 }
 
-/* Адаптивность */
+/* Фокус для клавиатурной навигации */
+:where(a, button, input, select, textarea):focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: var(--space-1);
+}
+
+/* Состояния для disabled элементов */
+:disabled, [aria-disabled="true"] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Подсветка целевого якоря */
+:target {
+  outline: 2px dashed var(--color-primary);
+  outline-offset: var(--space-2);
+}
+
+/* ===== БЛОК: ШАПКА И НАВИГАЦИЯ (БЭМ) ===== */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-3) 0;
+  margin-bottom: var(--space-4);
+  border-bottom: 1px solid var(--color-muted);
+}
+
+.site-header__brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--color-fg);
+}
+
+.site-nav {
+  display: flex;
+}
+
+.site-nav__list {
+  display: flex;
+  list-style: none;
+  gap: var(--space-4);
+}
+
+.site-nav__link {
+  color: var(--color-fg);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius);
+  transition: var(--transition);
+}
+
+.site-nav__link:hover {
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+  text-decoration: none;
+}
+
+.site-nav__link--active {
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+}
+
+/* ===== БЛОК: ХЛЕБНЫЕ КРОШКИ (БЭМ) ===== */
+.breadcrumbs {
+  margin-bottom: var(--space-4);
+  font-size: 0.9rem;
+}
+
+.breadcrumbs__list {
+  display: flex;
+  list-style: none;
+  gap: var(--space-2);
+}
+
+.breadcrumbs__link {
+  color: var(--color-primary);
+}
+
+.breadcrumbs__current {
+  color: var(--color-muted);
+}
+
+/* ===== БЛОК: СЕКЦИИ (БЭМ) ===== */
+.section {
+  padding-block: var(--space-5);
+}
+
+.section__title {
+  margin: 0 0 var(--space-4);
+  color: var(--color-fg);
+}
+
+/* Секция услуг на главной */
+.services-section {
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-muted);
+  border-radius: var(--radius);
+  padding: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+/* ===== БЛОК: ФОРМА (БЭМ) ===== */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.form__group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.form__label {
+  font-weight: bold;
+  color: var(--color-fg);
+}
+
+.form__input,
+.form__select,
+.form__textarea {
+  padding: var(--space-3);
+  border: 1px solid var(--color-muted);
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-family: inherit;
+  transition: var(--transition);
+}
+
+.form__input:focus,
+.form__select:focus,
+.form__textarea:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(10, 132, 255, 0.1);
+}
+
+.form__error {
+  color: var(--color-danger);
+  font-size: 0.9rem;
+  margin-top: var(--space-1);
+}
+
+.form__actions {
+  display: flex;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+  justify-content: flex-end;
+}
+/* Стили для ошибок валидации */
+.form__input--error {
+    border-color: var(--color-danger) !important;
+    box-shadow: 0 0 0 2px rgba(176, 0, 32, 0.1) !important;
+}
+
+/* ===== БЛОК: МОДАЛЬНОЕ ОКНО (БЭМ) ===== */
+.modal {
+  padding: var(--space-4);
+  border: none;
+  border-radius: var(--radius);
+  min-width: min(90vw, 400px);
+  box-shadow: var(--shadow);
+}
+
+.modal::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
+}
+
+.modal__title {
+  margin: 0 0 var(--space-3);
+  color: var(--color-fg);
+}
+
+/* ===== БЛОК: КНОПКИ (БЭМ) ===== */
+.btn {
+  padding: var(--space-3) var(--space-4);
+  border: none;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+}
+
+.btn--primary {
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+}
+
+.btn--primary:hover {
+  background-color: #0056b3;
+  text-decoration: none;
+}
+
+.btn--secondary {
+  background-color: var(--color-muted);
+  color: var(--color-bg);
+}
+
+.btn--secondary:hover {
+  background-color: #555;
+  text-decoration: none;
+}
+
+/* ===== БЛОК: КОНТАКТНАЯ ИНФОРМАЦИЯ (БЭМ) ===== */
+.contact-info {
+  margin: var(--space-4) 0;
+  padding: var(--space-4);
+  background: var(--color-bg);
+  border-radius: var(--radius);
+  border-left: 4px solid var(--color-primary);
+}
+
+.contact-info__title {
+  margin: 0 0 var(--space-3);
+  color: var(--color-fg);
+}
+
+.contact-details {
+  margin: var(--space-3) 0;
+}
+
+.contact-details__item {
+  margin: var(--space-2) 0;
+  padding: var(--space-2);
+  background: rgba(0, 0, 0, 0.02);
+  border-radius: var(--radius);
+}
+
+/* ===== БЛОК: ПОРТФОЛИО (БЭМ) ===== */
+.portfolio-section {
+  margin: var(--space-4) 0;
+}
+
+.portfolio-item {
+  margin: var(--space-3) 0;
+  padding: var(--space-3);
+  background: var(--color-bg);
+  border: 1px solid var(--color-muted);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.portfolio-item:hover {
+  background: #f8f9fa;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+/* ===== ИЗОБРАЖЕНИЯ И МЕДИА ===== */
+/* Responsive images */
+.responsive-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius);
+}
+
+/* Фоновая секция с градиентом */
+.hero-section {
+  background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.55),
+      rgba(0, 0, 0, 0.15)
+    ),
+    url("assets/hero-background.jpg") center/cover no-repeat;
+  color: var(--color-bg);
+  padding: clamp(2rem, 6vw, 6rem) 1rem;
+  border-radius: var(--radius);
+  text-align: center;
+}
+
+/* Контейнер для медиа с фиксированным соотношением сторон */
+.media-container {
+  aspect-ratio: 16/9;
+  width: min(100%, 960px);
+  margin-inline: auto;
+}
+
+.media-container iframe,
+.media-container video {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: var(--radius);
+}
+
+/* Стили для видео */
+.video-player {
+  width: 100%;
+  border-radius: var(--radius);
+  background: var(--color-bg);
+}
+
+/* ===== ПОДВАЛ (БЭМ) ===== */
+.site-footer {
+  margin-top: var(--space-5);
+  padding: var(--space-4) 0;
+  border-top: 1px solid var(--color-muted);
+  text-align: center;
+}
+
+.site-footer__link {
+  margin: 0 var(--space-3);
+  color: var(--color-primary);
+}
+
+.site-footer__text {
+  margin: var(--space-2) 0;
+  color: var(--color-muted);
+}
+
+/* ===== ТЕМНАЯ ТЕМА ===== */
+body.theme-dark {
+  --color-bg: #0b0b0b;
+  --color-fg: #f5f5f5;
+  --color-muted: #aaa;
+  --color-primary: #6aa2ff;
+  color-scheme: dark;
+}
+
+/* ===== АДАПТИВНОСТЬ ===== */
 @media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        gap: 1rem;
-    }
-    
-    nav ul {
-        gap: 1rem;
-    }
-    
-    body {
-        padding: 10px;
-    }
+  .site-header {
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+  
+  .site-nav__list {
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+  
+  .form__actions {
+    flex-direction: column;
+  }
+  
+  body {
+    padding: var(--space-2);
+  }
+}
+
+/* ===== УТИЛИТЫ ===== */
+.text-center { text-align: center; }
+.text-muted { color: var(--color-muted); }
+.mt-1 { margin-top: var(--space-1); }
+.mt-2 { margin-top: var(--space-2); }
+.mt-3 { margin-top: var(--space-3); }
+.mb-1 { margin-bottom: var(--space-1); }
+.mb-2 { margin-bottom: var(--space-2); }
+.mb-3 { margin-bottom: var(--space-3); }
+
+/* ===== АНИМАЦИИ ===== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
 }

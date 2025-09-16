@@ -2,55 +2,91 @@
 <html lang="ru">
 
 <head>
-    <title>Контакты</title>
     <meta charset="UTF-8">
-    <meta name="description" content="Как со мной связаться? ">
-    <link rel="stylesheet" href="/my-awesome-project/styles.css">
-    <script src="/my-awesome-project/main.js" defer></script>
-    <link rel="icon" href="/my-awesome-project/assets/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lovary Design</title>
+    <meta name="description" content="сайт-портфолио графического дизайнера">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <script src="main.js" defer></script>
 </head>
 
 <body>
-    <header>
-        <a href="/">Lovary design</a>
-        <nav>
-            <ul>
-                <li><a href="index.html">Главная</a></li>
-                <li><a href="portfolio.html">Портфолио</a></li>
-                <li><a href="contacts.html">Контакты</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <nav aria-label="Хлебные крошки">
-            <a href="index.html">Главная</a>
-            <a href="portfolio.html">Портфолио</a>
-            <span>Контакты</span>
-        </nav>
-        <h1>Понравились мои работы?</h1>
-        <h1>Случился метч по стилю ?</h1>
-        <h1>Смело пиши мне в соц.сетях, создадим красоту вместе!</h1>
-        <section class="contact-info">
-            <h3>Телеграмм</h3>
-            <p>t.me/zarii_naa</p>
-        </section>
-        <section class="contact-info">
-            <h3>WhatsUp</h3>
-            <p>t.me/zarii_naa</p>
-        </section>
-        <section class="contact-info">
-            <h3>ВКонтакте</h3>
-            <p>t.me/zarii_naa</p>
-        </section>
-        <section class="contact-info">
-            <h2>С любовью, Lovary Design</h2>
-            <p>ул. Преображенского,42ст1</p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy;2025 Lovary Design. Все права защищены.</p>
-        <p>Телефон: +7(939)700-52-52</p>
-    </footer>
+    <div class="container">
+
+        <body>
+            <div class="container">
+                <header class="site-header">
+                    <a href="/" class="site-header__brand">Lovary Design</a>
+                    <nav class="site-nav" aria-label="Основная навигация">
+                        <ul class="site-nav__list">
+                            <li class="site-nav__item">
+                                <a href="index.html" class="site-nav__link site-nav__link--active">Главная</a>
+                            </li>
+                            <li class="site-nav__item">
+                                <a href="portfolio.html" class="site-nav__link">Портфолио</a>
+                            </li>
+                            <li class="site-nav__item">
+                                <a href="contacts.html" class="site-nav__link">Контакты</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </header>
+
+                <main>
+                    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+                        <ul class="breadcrumbs__list">
+                            <li><a href="index.html" class="breadcrumbs__link">Главная</a></li>
+                            <li><a href="portfolio.html" class="breadcrumbs__link">Портфолио</a></li>
+                            <li><span class="breadcrumbs__current">Контакты</span></li>
+                        </ul>
+                    </nav>
+
+                    <h1 class="text-center fade-in">Понравились мои работы?</h1>
+                    <h2 class="text-center fade-in">Случился метч по стилю?</h2>
+                    <h3 class="text-center fade-in">Смело пиши мне в соц.сетях, создадим красоту вместе!</h3>
+
+                    <section class="contact-info fade-in">
+                        <h3 class="contact-info__title">Телеграмм</h3>
+                        <div class="contact-details">
+                            <p class="contact-details__item">t.me/zarii_naa</p>
+                        </div>
+                    </section>
+
+                    <section class="contact-info fade-in">
+                        <h3 class="contact-info__title">WhatsApp</h3>
+                        <div class="contact-details">
+                            <p class="contact-details__item">t.me/zarii_naa</p>
+                        </div>
+                    </section>
+
+                    <section class="contact-info fade-in">
+                        <h3 class="contact-info__title">ВКонтакте</h3>
+                        <div class="contact-details">
+                            <p class="contact-details__item">t.me/zarii_naa</p>
+                        </div>
+                    </section>
+
+                    <section class="contact-info fade-in">
+                        <h2 class="contact-info__title">С любовью, Lovary Design</h2>
+                        <div class="contact-details">
+                            <p class="contact-details__item">ул. Преображенского,42ст1</p>
+                        </div>
+                    </section>
+                </main>
+
+                <footer class="site-footer">
+                    <footer class="site-footer">
+                        <a href="#" class="site-footer__link">ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ</a>
+                        <a href="portfolio.html" class="site-footer__link">Портфолио</a>
+                        <a href="contacts.html" class="site-footer__link">Контакты</a>
+                        <p class="site-footer__text">&copy;2025 Lovary Design. Все права защищены.</p>
+                        <p class="site-footer__text">Телефон: +7(939)700-52-52</p>
+                    </footer>
+                </footer>
+            </div>
+        </body>
+    </div>
 </body>
 
 </html>
