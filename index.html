@@ -6,111 +6,162 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lovary Design</title>
     <meta name="description" content="сайт-портфолио графического дизайнера">
-    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="assets/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
     <script src="main.js" defer></script>
 </head>
 
 <body>
     <div class="container">
+        <header class="site-header">
+            <a href="/" class="site-header__brand">LD</a>
+            <nav class="site-nav" aria-label="Основная навигация">
+                <ul class="site-nav__list">
+                    <li class="site-nav__item">
+                        <a href="index.html" class="site-nav__link site-nav__link--active">Главная</a>
+                    </li>
+                    <li class="site-nav__item">
+                        <a href="portfolio.html" class="site-nav__link">Портфолио</a>
+                    </li>
+                    <li class="site-nav__item">
+                        <a href="contacts.html" class="site-nav__link">Контакты</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
 
-        <body>
-            <div class="container">
-                <header class="site-header">
-                    <a href="/" class="site-header__brand">Lovary Design</a>
-                    <nav class="site-nav" aria-label="Основная навигация">
-                        <ul class="site-nav__list">
-                            <li class="site-nav__item">
-                                <a href="index.html" class="site-nav__link site-nav__link--active">Главная</a>
-                            </li>
-                            <li class="site-nav__item">
-                                <a href="portfolio.html" class="site-nav__link">Портфолио</a>
-                            </li>
-                            <li class="site-nav__item">
-                                <a href="contacts.html" class="site-nav__link">Контакты</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </header>
+        <main>
+            <!-- Главный блок по макету -->
+            <section class="hero-section">
+                <div class="hero-content">
+                    <h1 class="hero-name">Зырянова Арина</h1>
+                    <p class="hero-profession">Graphic designer</p>
 
-                <main>
-                    <h1 class="text-center fade-in">Приятно познакомиться, Арина - Ваш графический дизайнер</h1>
+                    <div class="hero-services">
+                        <!-- Первая строка -->
+                        <div class="services-row">
+                            <div class="service-item">Айдентика</div>
+                            <div class="service-item">Фирменный стиль</div>
+                            <div class="service-item">Полиграфия</div>
+                        </div>
 
-                    <section class="services-section section fade-in">
-                        <h2 class="section__title">Услуги</h2>
-                        <p>Полиграфия, типографика</p>
-                        <p>разработка key visual, айдентики и промо сайтов и многое всего</p>
-                        <a href="portfolio.html" class="btn btn--primary">Портфолио</a>
-                    </section>
+                        <!-- Вторая строка -->
+                        <div class="services-row">
+                            <div class="service-item">Упаковка</div>
+                            <div class="service-item">Типографика</div>
+                        </div>
+                    </div>
 
-                    <section class="section fade-in">
-                        <h2 class="section__title">Связь со мной</h2>
-                        <p>Напиши сюда или оформи заказ прямо на сайте</p>
-                        <a href="contacts.html" class="btn btn--secondary">Тык для связи</a>
-                    </section>
+                    <div class="hero-actions">
+                        <a href="portfolio.html" class="btn btn--primary">портфолио</a>
+                        <button id="openDialog" class="btn btn--primary" type="button">Заказ</button>
+                    </div>
+                </div>
+            </section>
 
-                    <button id="openDialog" class="btn btn--primary" type="button">Заказать дизайн</button>
-
-                    <!-- Модальное окно -->
-                    <dialog id="contactDialog" class="modal" aria-labelledby="dialogTitle">
-                        <h2 id="dialogTitle" class="modal__title">1 шаг до работы со мной</h2>
-                        <form id="contactForm" class="form" method="dialog" novalidate>
-                            <div class="form__group">
-                                <label for="name" class="form__label">Имя</label>
-                                <input id="name" name="name" type="text" class="form__input" required minlength="2"
-                                    autocomplete="given-name">
-                            </div>
-
-                            <div class="form__group">
-                                <label for="email" class="form__label">E-mail</label>
-                                <input id="email" name="email" type="email" class="form__input" required
-                                    autocomplete="email">
-                            </div>
-
-                            <div class="form__group">
-                                <label for="phone" class="form__label">Телефон</label>
-                                <input id="phone" name="phone" type="tel" class="form__input" inputmode="tel"
-                                    autocomplete="tel" aria-describedby="phoneHelp" placeholder="+7 (___) ___-___-__"
-                                    required pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$">
-                                <small id="phoneHelp" class="text-muted">Формат: +7 (900) 000-00-00</small>
-                            </div>
-
-                            <div class="form__group">
-                                <label for="topic" class="form__label">Вид услуги</label>
-                                <select id="topic" name="topic" class="form__select" required>
-                                    <option value="">Выберите услугу</option>
-                                    <option>Полиграфия</option>
-                                    <option>Типографика</option>
-                                    <option>Айдентика</option>
-                                    <option>Фирменный стиль</option>
-                                    <option>Портрет</option>
-                                    <option>Другое</option>
-                                </select>
-                            </div>
-
-                            <div class="form__group">
-                                <label for="message" class="form__label">Комментарий к заказу</label>
-                                <textarea id="message" name="message" rows="4" class="form__textarea"
-                                    required></textarea>
-                            </div>
-
-                            <div class="form__actions">
-                                <button type="button" id="closeDialog" class="btn btn--secondary">Закрыть</button>
-                                <button type="submit" class="btn btn--primary">Отправить</button>
-                            </div>
-                        </form>
-                    </dialog>
-                </main>
-
-                <footer class="site-footer">
-                    <a href="#" class="site-footer__link">ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ</a>
-                    <a href="portfolio.html" class="site-footer__link">Портфолио</a>
-                    <a href="contacts.html" class="site-footer__link">Контакты</a>
-                    <p class="site-footer__text">&copy;2025 Lovary Design. Все права защищены.</p>
-                    <p class="site-footer__text">Телефон: +7(939)700-52-52</p>
-                </footer>
+            <div class="hero-images">
+                <img src="assets/ph.png" alt="Ph" class="hero-image ph">
+                <img src="assets/ai.png" alt="Ai" class="hero-image ai">
             </div>
-        </body>
+
+            <section class="about-section section fade-in">
+                <div class="about-container">
+                    <div class="about-content">
+                        <h2 class="about-title">Приятно познакомиться, Арина</h2>
+                        <div class="about-text">
+                            <p>Меня зовут Арина, мне 19 лет, и я - студентка 2 курса, по совместительству действующий
+                                графический дизайнер. Не представляю свою жизнь без музыки, спорта и сладкого. В
+                                свободное время предпочитаю смотреть сериалы, тренироваться в спортзале.</p>
+
+                            <h3 class="education-title">РТУ МИРЭА сентябрь 2024 г. – июль 2028 г.</h3>
+                            <p>Бакалавриат, fullstack-разработка. 09.03.02 Информационные системы и технологии. План
+                                обучения охватывает все этапы создания продукта от разработки ПО с использованием
+                                различных языков программирования до реализацией полноценного интерфейса.</p>
+
+                            <h3 class="education-title">онлайн–школа дизайна “Contented” май 2025 г. – сентябрь 2026 г.
+                            </h3>
+                            <p>Курс “Графический дизайнер с 0 до PRO”. В ходе обучения прокачиваю скиллы по созданию
+                                айдентики, дизайна упаковки, промо сайтов и фирменного стиля.</p>
+
+                            <h3 class="education-title">coming soon...</h3>
+                        </div>
+                    </div>
+
+                    <div class="about-image">
+                        <img src="assets/me.jpg" alt="Арина - графический дизайнер">
+                    </div>
+                </div>
+            </section>
+
+            <!-- После основного текста на главной странице -->
+            <section class="video-section section fade-in">
+                <h2 class="section__title" style="margin-top:20%">Видео о моей работе</h2>
+                <div class="video-container">
+                    <video controls width="100%">
+                        <source src="assets/video.mov" type="video/mp4">
+                        <source src="assets/video.mov" type="video/webm">
+                        Ваш браузер не поддерживает видео.
+                    </video>
+                </div>
+            </section>
+
+            <!-- Модальное окно -->
+            <dialog id="contactDialog" class="modal" aria-labelledby="dialogTitle">
+                <h2 id="dialogTitle" class="modal__title">1 шаг до работы со мной</h2>
+                <form id="contactForm" class="form" method="dialog" novalidate>
+                    <div class="form__group">
+                        <label for="name" class="form__label">Имя</label>
+                        <input id="name" name="name" type="text" class="form__input" required minlength="2"
+                            autocomplete="given-name">
+                    </div>
+
+                    <div class="form__group">
+                        <label for="email" class="form__label">E-mail</label>
+                        <input id="email" name="email" type="email" class="form__input" required autocomplete="email">
+                    </div>
+
+                    <div class="form__group">
+                        <label for="phone" class="form__label">Телефон</label>
+                        <input id="phone" name="phone" type="tel" class="form__input" inputmode="tel" autocomplete="tel"
+                            aria-describedby="phoneHelp" placeholder="+7 (___) ___-___-__" required
+                            pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$">
+                        <small id="phoneHelp" class="text-muted">Формат: +7 (900) 000-00-00</small>
+                    </div>
+
+                    <div class="form__group">
+                        <label for="topic" class="form__label">Вид услуги</label>
+                        <select id="topic" name="topic" class="form__select" required>
+                            <option value="">Выберите услугу</option>
+                            <option>Полиграфия</option>
+                            <option>Типографика</option>
+                            <option>Айдентика</option>
+                            <option>Фирменный стиль</option>
+                            <option>Портрет</option>
+                            <option>Другое</option>
+                        </select>
+                    </div>
+
+                    <div class="form__group">
+                        <label for="message" class="form__label">Комментарий к заказу</label>
+                        <textarea id="message" name="message" rows="4" class="form__textarea" required></textarea>
+                    </div>
+
+                    <div class="form__actions">
+                        <button type="button" id="closeDialog" class="btn btn--secondary">Закрыть</button>
+                        <button type="submit" class="btn btn--primary">Отправить</button>
+                    </div>
+                </form>
+            </dialog>
+        </main>
+
+        <footer class="site-footer">
+            <a href="#" class="site-footer__link">ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ</a>
+            <a href="portfolio.html" class="site-footer__link">Портфолио</a>
+            <a href="contacts.html" class="site-footer__link">Контакты</a>
+            <p class="site-footer__text">&copy;2025 Lovary Design. Все права защищены.</p>
+            <p class="site-footer__text">Телефон: +7(939)700-52-52</p>
+        </footer>
     </div>
 </body>
 

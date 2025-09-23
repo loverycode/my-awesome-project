@@ -4,88 +4,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lovary Design</title>
+    <title>Lovary Design-контакты</title>
     <meta name="description" content="сайт-портфолио графического дизайнера">
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
     <script src="main.js" defer></script>
 </head>
 
 <body>
     <div class="container">
+        <header class="site-header">
+            <a href="/" class="site-header__brand">LD</a>
+            <nav class="site-nav" aria-label="Основная навигация">
+                <ul class="site-nav__list">
+                    <li class="site-nav__item">
+                        <a href="index.html" class="site-nav__link">Главная</a>
+                    </li>
+                    <li class="site-nav__item">
+                        <a href="portfolio.html" class="site-nav__link">Портфолио</a>
+                    </li>
+                    <li class="site-nav__item">
+                        <a href="contacts.html" class="site-nav__link site-nav__link--active">Контакты</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
 
-        <body>
-            <div class="container">
-                <header class="site-header">
-                    <a href="/" class="site-header__brand">Lovary Design</a>
-                    <nav class="site-nav" aria-label="Основная навигация">
-                        <ul class="site-nav__list">
-                            <li class="site-nav__item">
-                                <a href="index.html" class="site-nav__link site-nav__link--active">Главная</a>
-                            </li>
-                            <li class="site-nav__item">
-                                <a href="portfolio.html" class="site-nav__link">Портфолио</a>
-                            </li>
-                            <li class="site-nav__item">
-                                <a href="contacts.html" class="site-nav__link">Контакты</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </header>
+        <main>
+            <!-- Хлебные крошки в строку без точек -->
+            <nav class="breadcrumbs" aria-label="Хлебные крошки">
+                <ul class="breadcrumbs__list">
+                    <li class="breadcrumbs__item">
+                        <a href="index.html" class="breadcrumbs__link">Главная</a>
+                    </li>
+                    <li class="breadcrumbs__item">
+                        <a href="portfolio.html" class="breadcrumbs__link">Портфолио</a>
+                    </li>
+                    <li class="breadcrumbs__item">
+                        <span class="breadcrumbs__current">Контакты</span>
+                    </li>
+                </ul>
+            </nav>
 
-                <main>
-                    <nav class="breadcrumbs" aria-label="Хлебные крошки">
-                        <ul class="breadcrumbs__list">
-                            <li><a href="index.html" class="breadcrumbs__link">Главная</a></li>
-                            <li><a href="portfolio.html" class="breadcrumbs__link">Портфолио</a></li>
-                            <li><span class="breadcrumbs__current">Контакты</span></li>
-                        </ul>
-                    </nav>
+            <h1 class="contacts-title fade-in">Понравились мои работы?</h>
+            <h2 class="contacts-subtitle fade-in">Случился метч по стилю?</h2>
+            <p class="contacts-description fade-in">Смело пиши мне в соц.сетях, создадим красоту вместе!</p>
 
-                    <h1 class="text-center fade-in">Понравились мои работы?</h1>
-                    <h2 class="text-center fade-in">Случился метч по стилю?</h2>
-                    <h3 class="text-center fade-in">Смело пиши мне в соц.сетях, создадим красоту вместе!</h3>
-
-                    <section class="contact-info fade-in">
-                        <h3 class="contact-info__title">Телеграмм</h3>
-                        <div class="contact-details">
-                            <p class="contact-details__item">t.me/zarii_naa</p>
-                        </div>
-                    </section>
-
-                    <section class="contact-info fade-in">
-                        <h3 class="contact-info__title">WhatsApp</h3>
-                        <div class="contact-details">
-                            <p class="contact-details__item">t.me/zarii_naa</p>
-                        </div>
-                    </section>
-
-                    <section class="contact-info fade-in">
-                        <h3 class="contact-info__title">ВКонтакте</h3>
-                        <div class="contact-details">
-                            <p class="contact-details__item">t.me/zarii_naa</p>
-                        </div>
-                    </section>
-
-                    <section class="contact-info fade-in">
-                        <h2 class="contact-info__title">С любовью, Lovary Design</h2>
-                        <div class="contact-details">
-                            <p class="contact-details__item">ул. Преображенского,42ст1</p>
-                        </div>
-                    </section>
-                </main>
-
-                <footer class="site-footer">
-                    <footer class="site-footer">
-                        <a href="#" class="site-footer__link">ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ</a>
-                        <a href="portfolio.html" class="site-footer__link">Портфолио</a>
-                        <a href="contacts.html" class="site-footer__link">Контакты</a>
-                        <p class="site-footer__text">&copy;2025 Lovary Design. Все права защищены.</p>
-                        <p class="site-footer__text">Телефон: +7(939)700-52-52</p>
-                    </footer>
-                </footer>
+            <!-- Секция с QR-кодами -->
+            <div class="qr-section fade-in">
+                <div class="qr-codes">
+                    <!-- Телеграм -->
+                    <div class="qr-item">
+                        <img src="assets/whatsapp-qr.png" alt="QR код Telegram" class="qr-image">
+                        <h4 class="qr-title">Telegram</h4>
+                        <a href="https://t.me/zarii_naa" class="qr-link">t.me/zarii_naa</a>
+                    </div>
+                    
+                    <!-- WhatsApp -->
+                    <div class="qr-item">
+                        <img src="assets/vk-qr.png" alt="QR код WhatsApp" class="qr-image">
+                        <h4 class="qr-title">WhatsApp</h4>
+                        <a href="https://wa.me/79397005252" class="qr-link">+7(939)700-52-52</a>
+                    </div>
+                    
+                    <!-- ВКонтакте -->
+                    <div class="qr-item">
+                        <img src="assets/telegram-qr.png" alt="QR код ВКонтакте" class="qr-image">
+                        <h4 class="qr-title">ВКонтакте</h4>
+                        <a href="https://vk.com/your-profile" class="qr-link">vk.com/zarii_naa</a>
+                    </div>
+                </div>
             </div>
-        </body>
+
+            <!-- Адрес -->
+            <section class="contact-address fade-in">
+                <h2 class="contact-address__title" style="margin-top: 20%;">С любовью, Lovary Design</h2>
+                <p class="contact-address__text">ул. Преображенского, 42ст1</p>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <a href="#" class="site-footer__link">ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ</a>
+            <a href="portfolio.html" class="site-footer__link">Портфолио</a>
+            <a href="contacts.html" class="site-footer__link">Контакты</a>
+            <p class="site-footer__text">&copy;2025 Lovary Design. Все права защищены.</p>
+            <p class="site-footer__text">Телефон: +7(939)700-52-52</p>
+        </footer>
     </div>
 </body>
 
